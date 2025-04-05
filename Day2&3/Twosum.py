@@ -1,17 +1,10 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        i=0
-        j=len(nums)-1
-        nums.sort()
-        print(nums)
-        while i<=j:
-            if nums[i]+nums[j] == target:
-                return [i,j]
-
-            elif nums[i]+nums[j] >target:
-                j-=1
-
-            else:
-                i+=1
+        n=len(nums)
+        for i in range(n):
+            for j in range(i+1,n):
+                if nums[i]+nums[j]==target:
+                    return [i,j]
+        return[]
                 
         
